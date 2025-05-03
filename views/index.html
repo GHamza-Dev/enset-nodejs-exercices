@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Projet Express</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Projet Express</h1>
+  </header>
+  
+  <main>
+    <section>
+      <h2>À propos</h2>
+      <p>Ceci est un exemple de projet ExpressJS structuré.</p>
+    </section>
+
+    <div class="content">
+        <section>
+            <h2>Structure du projet</h2>
+            <p>Voici la structure de base du projet:</p>
+            <code> <pre>
+                PROJECT-ROOT/
+                    ├── package.json
+                    ├── app.js
+                    ├── server.js
+                    ├── config/
+                    │   └── db.js
+                    ├── routes/
+                    │   ├── index.js
+                    │   ├── users.js
+                    │   └── products.js
+                    ├── controllers/
+                    │   ├── userController.js
+                    │   └── productController.js
+                    ├── models/
+                    │   ├── userModel.js
+                    │   └── productModel.js
+                    ├── middlewares/
+                    │   └── auth.js
+                    ├── public/
+                    │   ├── css/
+                    │   │   └── style.css
+                    │   ├── js/
+                    │   │   └── main.js
+                    │   └── images/
+                    │       └── logo.png
+                    └── views/
+                        ├── index.html
+                        └── 404.html</pre>
+            </code>
+        </section>
+        
+        <section>
+          <h2>Routes</h2>
+          <p>Voici quelques routes disponibles:</p>
+          <ul>
+            <li><a href="/">Root</a></li>
+            <li><a href="/api/users">Liste des utilisateurs</a></li>
+            <li><a href="/api/products">Liste des produits</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>API</h2>
+          <p>Essayez ces endpoints:</p>
+          <ul>
+            <li><a href="/api/status">Statut de l'API</a></li>
+            <li><a href="/api/users">Liste des utilisateurs</a></li>
+            <li><a href="/api/products">Liste des produits</a></li>
+          </ul>
+        </section>
+    </div>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 GASSAI Hamza</p>
+  </footer>
+  
+  <script src="/js/main.js"></script>
+</body>
+</html>
