@@ -40,6 +40,7 @@ app.listen(PORT, () => {
 
 - Créez un projet ExpressJS complet avec la structure de répertoires recommandée et configurez-le pour servir des fichiers statiques et gérer différentes routes.
 
+![partie 1 exercice 2](./demo/p1-exercice-n2.PNG "1. Exercice 2")
 
 
 
