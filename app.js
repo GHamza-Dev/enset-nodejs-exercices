@@ -1,38 +1,32 @@
 const express = require('express');
-const path = require('path');
-const morgan = require('morgan');
+const bodyParser = require('body-parser');
+
+// Import des routeurs
+const taskRouter = require('./routes/tasks.js');
+
 const app = express();
 
-// Middleware pour logger les requêtes
-app.use(morgan('dev'));
-
-// Middleware pour parser le JSON
-app.use(express.json());
-
-// Middleware pour parser les données des formulaires
-app.use(express.urlencoded({ extended: false }));
-
-// Servir les fichiers statiques
-app.use(express.static(path.join(__dirname, 'public')));
+// Middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
-const indexRoutes = require('./routes/index');
-const userRoutes = require('./routes/users');
-const productRoutes = require('./routes/products');
+app.use('/tasks', taskRouter);
 
-app.use('/', indexRoutes);
-app.use('/api/users', userRoutes);
-app.use('/api/products', productRoutes);
-
-// Middleware pour gérer les 404
-app.use((req, res, next) => {
-  res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
+// Route par défaut
+app.get('/', (req, res) => {
+  res.send('Bienvenue sur l\'API de gestion de tâches');
 });
 
-// Middleware pour gérer les erreurs
+// Gestion des erreurs 404
+app.use((req, res) => {
+  res.status(404).json({ message: 'Route non trouvée' });
+});
+
+// Gestion des erreurs globales
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).send('Quelque chose s\'est mal passé!');
+  res.status(500).json({ message: 'Erreur serveur', error: err.message });
 });
 
 module.exports = app;
