@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 
 // Import des routeurs
 const taskRouter = require('./routes/tasks.js');
+const postRouter = require('./routes/posts.js');
+const categoryRouter = require('./routes/categories.js');
 
 const app = express();
 
@@ -12,6 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
 app.use('/tasks', taskRouter);
+app.use('/posts', postRouter);
+app.use('/categories', categoryRouter);
 
 // Route par défaut
 app.get('/', (req, res) => {

@@ -176,6 +176,53 @@ Supprime une tâche existante.
 }
 ```
 
+## API de Blog
+
+### Récupérer les articles par année/mois
+**GET /posts/:year/:month?**
+
+Retourne les articles publiés durant une année spécifique et optionnellement durant un mois spécifique.
+
+**Paramètres**
+- `year` (obligatoire) - Année de publication (ex: 2025)
+- `month` (optionnel) - Mois de publication (1-12)
+
+**Réponse**
+```json
+[
+  {
+    "id": 1,
+    "title": "Introduction à Express.js",
+    "content": "Express.js est un framework web pour Node.js...",
+    "author_id": 1,
+    "created_at": "2025-01-15T08:30:00Z",
+    "updated_at": "2025-01-15T08:30:00Z"
+  }
+]
+```
+
+### Récupérer les articles par catégorie
+**GET /categories/:categoryName/posts**
+
+Retourne tous les articles appartenant à une catégorie spécifique.
+
+**Paramètres**
+- `categoryName` (obligatoire) - Nom de la catégorie (ex: "Technologie")
+
+**Réponse**
+```json
+[
+  {
+    "id": 3,
+    "title": "RESTful API Best Practices",
+    "content": "Les meilleures pratiques pour concevoir des API RESTful...",
+    "author_id": 1,
+    "created_at": "2025-03-10T14:20:00Z",
+    "updated_at": "2025-03-10T14:20:00Z"
+  }
+]
+```
+
 
 
 
